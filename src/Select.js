@@ -67,6 +67,7 @@ const Select = React.createClass({
 		ignoreCase: React.PropTypes.bool,           // whether to perform case-insensitive filtering
 		inputProps: React.PropTypes.object,         // custom attributes for the Input
 		inputRenderer: React.PropTypes.func,        // returns a custom input component
+		inputValueOnFocus: React.PropTypes.string,  // define input value on focus
 		instanceId: React.PropTypes.string,         // set the components instanceId
 		isLoading: React.PropTypes.bool,            // whether the Select is loading externally or not (such as options being loaded)
 		joinValues: React.PropTypes.bool,           // joins multiple values into a single form field with the delimiter (legacy mode)
@@ -134,6 +135,7 @@ const Select = React.createClass({
 			ignoreAccents: true,
 			ignoreCase: true,
 			inputProps: {},
+			inputValueOnFocus: undefined,
 			isLoading: false,
 			joinValues: false,
 			labelKey: 'label',
@@ -417,7 +419,8 @@ const Select = React.createClass({
 		}
 		this.setState({
 			isFocused: true,
-			isOpen: isOpen
+			isOpen: isOpen,
+			inputValue: this.props.inputValueOnFocus ? this.props.inputValueOnFocus : this.state.inputValue
 		});
 		this._openAfterFocus = false;
 	},

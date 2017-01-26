@@ -21,6 +21,7 @@ const AsyncCreatable = React.createClass({
 						{(creatableProps) => (
 							<Select
 								{...reduce(asyncProps, reduce(creatableProps, {}))}
+								inputValueOnFocus={ this.props.inputValueOnFocus }
 								onInputChange={(input) => {
 									creatableProps.onInputChange(input);
 									return asyncProps.onInputChange(input);
