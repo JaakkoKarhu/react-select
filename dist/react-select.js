@@ -177,7 +177,7 @@ var Async = (function (_Component) {
 			}
 
 			if (ignoreCase) {
-				inputValue = inputValue.toLowerCase();
+				//inputValue = inputValue.toLowerCase();
 			}
 
 			if (onInputChange) {

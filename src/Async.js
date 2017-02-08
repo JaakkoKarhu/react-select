@@ -144,7 +144,7 @@ export default class Async extends Component {
 		}
 
 		if (ignoreCase) {
-			inputValue = inputValue.toLowerCase();
+			//inputValue = inputValue.toLowerCase();
 		}
 
 		if (onInputChange) {
